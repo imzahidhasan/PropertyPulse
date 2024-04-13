@@ -1,6 +1,6 @@
 [
   {
-    "image": "https://example.com/image3.jpg",
+    "image": "https://i.ibb.co/ynRKGr7/aapartment.jpg",
     "estate_title": "Beachfront Condo",
     "id": "003",
     "segment": "Condominiums",
@@ -13,10 +13,13 @@
       "private beach access",
       "fitness center",
       "concierge service"
-    ]
+    ],
+    "bedroom": "4",
+    "bathroom": "3",
+    "garage": "2"
   },
   {
-    "image": "https://example.com/image4.jpg",
+    "image": "https://i.ibb.co/PxsJwyM/room.jpg",
     "estate_title": "Suburban Family Home",
     "id": "004",
     "segment": "Single-family homes",
@@ -25,10 +28,13 @@
     "status": "sale",
     "area": "2200 sq ft",
     "location": "Suburban Town, State B",
-    "facilities": ["finished basement", "in-ground pool", "2-car garage"]
+    "facilities": ["finished basement", "in-ground pool", "2-car garage"],
+    "bedroom": "4",
+    "bathroom": "3",
+    "garage": "2"
   },
   {
-    "image": "https://example.com/image5.jpg",
+    "image": "https://i.ibb.co/hccPB4r/live.jpg",
     "estate_title": "Downtown Loft",
     "id": "005",
     "segment": "Apartments",
@@ -37,10 +43,13 @@
     "status": "rent",
     "area": "1100 sq ft",
     "location": "Downtown, City C",
-    "facilities": ["open floor plan", "gourmet kitchen", "rooftop terrace"]
+    "facilities": ["open floor plan", "gourmet kitchen", "rooftop terrace"],
+    "bedroom": "4",
+    "bathroom": "3",
+    "garage": "2"
   },
   {
-    "image": "https://example.com/image6.jpg",
+    "image": "https://i.ibb.co/Fbv2tpd/kitchen.jpg",
     "estate_title": "Luxury Townhouse",
     "id": "006",
     "segment": "Townhouses",
@@ -49,10 +58,13 @@
     "status": "sale",
     "area": "2800 sq ft",
     "location": "Upscale Suburb, State D",
-    "facilities": ["private garage", "rooftop deck", "gourmet kitchen"]
+    "facilities": ["private garage", "rooftop deck", "gourmet kitchen"],
+    "bedroom": "4",
+    "bathroom": "3",
+    "garage": "2"
   },
   {
-    "image": "https://example.com/image7.jpg",
+    "image": "https://i.ibb.co/hLWMcVy/belcony.jpg",
     "estate_title": "Historic Farmhouse",
     "id": "007",
     "segment": "Single-family homes",
@@ -61,10 +73,13 @@
     "status": "sale",
     "area": "3500 sq ft",
     "location": "Rural County, State E",
-    "facilities": ["detached barn", "large porch", "mature orchard"]
+    "facilities": ["detached barn", "large porch", "mature orchard"],
+    "bedroom": "4",
+    "bathroom": "3",
+    "garage": "2"
   },
   {
-    "image": "https://example.com/image8.jpg",
+    "image": "https://i.ibb.co/9GpP820/homeee.jpg",
     "estate_title": "Luxury Penthouse",
     "id": "008",
     "segment": "Apartments",
@@ -73,10 +88,13 @@
     "status": "rent",
     "area": "2200 sq ft",
     "location": "Downtown Skyline, City F",
-    "facilities": ["private elevator", "rooftop terrace", "butler service"]
+    "facilities": ["private elevator", "rooftop terrace", "butler service"],
+    "bedroom": "4",
+    "bathroom": "3",
+    "garage": "2"
   },
   {
-    "image": "https://example.com/image9.jpg",
+    "image": "https://i.ibb.co/186pB0c/home.jpg",
     "estate_title": "Waterfront Cottage",
     "id": "009",
     "segment": "Single-family homes",
@@ -85,10 +103,13 @@
     "status": "sale",
     "area": "1800 sq ft",
     "location": "Lakeside Community, State G",
-    "facilities": ["private beach", "boat house", "outdoor firepit"]
+    "facilities": ["private beach", "boat house", "outdoor firepit"],
+    "bedroom": "4",
+    "bathroom": "3",
+    "garage": "2"
   },
   {
-    "image": "https://example.com/image10.jpg",
+    "image": "https://i.ibb.co/QmrZTNJ/bed.jpg",
     "estate_title": "Urban Loft Apartment",
     "id": "010",
     "segment": "Apartments",
@@ -101,10 +122,13 @@
       "open floor plan",
       "exposed brick walls",
       "rooftop communal space"
-    ]
+    ],
+    "bedroom": "4",
+    "bathroom": "3",
+    "garage": "2"
   },
   {
-    "image": "https://example.com/image11.jpg",
+    "image": "https://i.ibb.co/ynRKGr7/aapartment.jpg",
     "estate_title": "Luxury Countryside Estate",
     "id": "011",
     "segment": "Single-family homes",
@@ -113,6 +137,10 @@
     "status": "sale",
     "area": "6000 sq ft",
     "location": "Scenic Rural Region, State I",
-    "facilities": ["private wine cellar", "indoor pool", "horse stables"]
+    "facilities": ["private wine cellar", "indoor pool", "horse stables"],
+    "bedroom":"4",
+    "bathroom":"3",
+    "garage":"2"
+    
   }
 ]

@@ -15,7 +15,7 @@ const routes = createBrowserRouter([
             {
                 index: true,
                 element: <HomePage />,
-                loader:()=>fetch()
+                loader:()=>fetch('/data.json')
             },
             {
                 path: 'register',
