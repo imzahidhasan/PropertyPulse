@@ -1,0 +1,118 @@
+[
+  {
+    "image": "https://example.com/image3.jpg",
+    "estate_title": "Beachfront Condo",
+    "id": "003",
+    "segment": "Condominiums",
+    "description": "Luxurious beachfront condo with stunning ocean views and private balcony.",
+    "price": "$2,500,000",
+    "status": "sale",
+    "area": "1800 sq ft",
+    "location": "Coastal City, State A",
+    "facilities": [
+      "private beach access",
+      "fitness center",
+      "concierge service"
+    ]
+  },
+  {
+    "image": "https://example.com/image4.jpg",
+    "estate_title": "Suburban Family Home",
+    "id": "004",
+    "segment": "Single-family homes",
+    "description": "Spacious family home in a quiet suburban neighborhood with large backyard.",
+    "price": "$450,000",
+    "status": "sale",
+    "area": "2200 sq ft",
+    "location": "Suburban Town, State B",
+    "facilities": ["finished basement", "in-ground pool", "2-car garage"]
+  },
+  {
+    "image": "https://example.com/image5.jpg",
+    "estate_title": "Downtown Loft",
+    "id": "005",
+    "segment": "Apartments",
+    "description": "Charming loft-style apartment in the heart of the city with exposed brick walls.",
+    "price": "$2,200/month",
+    "status": "rent",
+    "area": "1100 sq ft",
+    "location": "Downtown, City C",
+    "facilities": ["open floor plan", "gourmet kitchen", "rooftop terrace"]
+  },
+  {
+    "image": "https://example.com/image6.jpg",
+    "estate_title": "Luxury Townhouse",
+    "id": "006",
+    "segment": "Townhouses",
+    "description": "Elegant townhouse in a prestigious neighborhood with high-end finishes.",
+    "price": "$800,000",
+    "status": "sale",
+    "area": "2800 sq ft",
+    "location": "Upscale Suburb, State D",
+    "facilities": ["private garage", "rooftop deck", "gourmet kitchen"]
+  },
+  {
+    "image": "https://example.com/image7.jpg",
+    "estate_title": "Historic Farmhouse",
+    "id": "007",
+    "segment": "Single-family homes",
+    "description": "Charming historic farmhouse with original features and expansive acreage.",
+    "price": "$650,000",
+    "status": "sale",
+    "area": "3500 sq ft",
+    "location": "Rural County, State E",
+    "facilities": ["detached barn", "large porch", "mature orchard"]
+  },
+  {
+    "image": "https://example.com/image8.jpg",
+    "estate_title": "Luxury Penthouse",
+    "id": "008",
+    "segment": "Apartments",
+    "description": "Stunning penthouse with panoramic city views and high-end finishes.",
+    "price": "$5,000/month",
+    "status": "rent",
+    "area": "2200 sq ft",
+    "location": "Downtown Skyline, City F",
+    "facilities": ["private elevator", "rooftop terrace", "butler service"]
+  },
+  {
+    "image": "https://example.com/image9.jpg",
+    "estate_title": "Waterfront Cottage",
+    "id": "009",
+    "segment": "Single-family homes",
+    "description": "Charming waterfront cottage with private dock and breathtaking lake views.",
+    "price": "$375,000",
+    "status": "sale",
+    "area": "1800 sq ft",
+    "location": "Lakeside Community, State G",
+    "facilities": ["private beach", "boat house", "outdoor firepit"]
+  },
+  {
+    "image": "https://example.com/image10.jpg",
+    "estate_title": "Urban Loft Apartment",
+    "id": "010",
+    "segment": "Apartments",
+    "description": "Stylish urban loft apartment with industrial-chic design and city skyline views.",
+    "price": "$2,800/month",
+    "status": "rent",
+    "area": "1400 sq ft",
+    "location": "Trendy Neighborhood, City H",
+    "facilities": [
+      "open floor plan",
+      "exposed brick walls",
+      "rooftop communal space"
+    ]
+  },
+  {
+    "image": "https://example.com/image11.jpg",
+    "estate_title": "Luxury Countryside Estate",
+    "id": "011",
+    "segment": "Single-family homes",
+    "description": "Expansive countryside estate with rolling hills, private vineyard, and resort-style amenities.",
+    "price": "$4,500,000",
+    "status": "sale",
+    "area": "6000 sq ft",
+    "location": "Scenic Rural Region, State I",
+    "facilities": ["private wine cellar", "indoor pool", "horse stables"]
+  }
+]
