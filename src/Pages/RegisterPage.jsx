@@ -37,14 +37,15 @@ const RegisterPage = () => {
                     <h1 className='font-bold text-2xl text-center p-4'>Register Now</h1>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
+
                     <label className="form-control w-full mx-auto max-w-xs">
                         <div className="label">
                             <span className="label-text">Enter your name?</span>
                         </div>
                         <input {...register("name", { required: true })} type="text" placeholder="Name" className="input input-bordered w-full max-w-xs" />
                         {errors.name && <span className='text-red-500'>This field is required</span>}
-
                     </label>
+
                     <label className="form-control mx-auto w-full max-w-xs">
                         <div className="label">
                             <span className="label-text">Enter your email?</span>
@@ -53,14 +54,15 @@ const RegisterPage = () => {
                         {errors.email && <span className='text-red-500'>This field is required</span>}
 
                     </label>
+                    
                     <label className="form-control mx-auto w-full max-w-xs">
                         <div className="label">
                             <span className="label-text">Your Photo URL?</span>
                         </div>
                         <input {...register("url", { required: true })} type="text" placeholder="URL " className="input input-bordered w-full max-w-xs" />
                         {errors.url && <span className='text-red-500'>This field is required</span>}
-
                     </label>
+                    
                     <label className="form-control mx-auto w-full max-w-xs">
                         <div className="label">
                             <span className="label-text">Enter your password?</span>
