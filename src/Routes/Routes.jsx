@@ -7,6 +7,7 @@ import RegisterPage from '../Pages/RegisterPage'
 import LoginPage from '../Pages/LoginPage'
 import UpdateProfilePage from '../Pages/UpdateProfilePage'
 import DetailsPage from '../Pages/DetailsPage'
+import PrivetRoute from '../Pages/PrivetRoute'
 const routes = createBrowserRouter([
     {
         path: '/',
@@ -16,26 +17,27 @@ const routes = createBrowserRouter([
             {
                 index: true,
                 element: <HomePage />,
-                loader:()=>fetch('/data.json')
+                loader: () => fetch('/data.json')
             },
             {
                 path: 'register',
-                element:<RegisterPage/>
+                element: <RegisterPage />
             },
             {
                 path: 'login',
-                element:<LoginPage/>
+                element: <LoginPage />
             },
             {
                 path: 'update-profile',
-                element:<UpdateProfilePage/>
+                element: <UpdateProfilePage />
+            },
+            {
+                path: '/details/:id',
+                element: <PrivetRoute><DetailsPage /></PrivetRoute>
             }
         ]
     },
-    {
-        path: '/details/:id',
-        element:<DetailsPage/>
-    }
+
 ])
 
 

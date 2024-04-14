@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import React, { createContext, useEffect, useState } from 'react'
 import auth from './firebase.config'
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth/cordova'
@@ -17,10 +17,16 @@ const FirebaseProvider = ({ children }) => {
         return signOut(auth)
     }
     const googleLogin = (provider) => {
-        return signInWithPopup(auth,provider)
+        return signInWithPopup(auth, provider)
     }
     const githubLogin = (provider) => {
-        return signInWithPopup(auth,provider)
+        return signInWithPopup(auth, provider)
+    }
+    const updateUser = (name, url) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: url
+        })
     }
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -32,7 +38,7 @@ const FirebaseProvider = ({ children }) => {
 
 
     const allValues = {
-        createUser, logInUser, logOutUser, user, setUser, googleLogin, githubLogin
+        createUser, logInUser, logOutUser, user, setUser, googleLogin, githubLogin, updateUser
     }
 
     return (

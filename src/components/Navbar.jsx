@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { FirebaseContext } from '../Firebase/FirebaseProvider'
+import { Tooltip } from 'react-tooltip'
 
 const Navbar = () => {
     const { user, logOutUser, setUser } = useContext(FirebaseContext)
@@ -41,11 +42,12 @@ const Navbar = () => {
             <div className="navbar-end gap-2">
                 {user ? <div className="avatar">
                     <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                        <img src={user?.photoURL} />
+                        <a data-tooltip-id="tooltip" data-tooltip-content={ user?.displayName}><img src={user?.photoURL} /></a>
                     </div>
                 </div> : ''}
 
                 {user ? <button onClick={handleLogout} className="btn">Logout</button> : <Link to={'/login'} className="btn">Login</Link>}
+                <Tooltip id='tooltip'/>
             </div>
         </div>
     )

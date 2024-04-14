@@ -41,13 +41,11 @@ const LoginPage = () => {
 
     const handleGoogle = () => {
         googleLogin(googleProvider)
-            .then((result) => { console.log(result)})
+            .then((result) => { toast.success('Login successfully!') })
     }
     const handleGithub = () => {
         githubLogin(githubProvider)
-            .then((result) =>{
-            console.log(result);
-        })
+            .then((result) => { toast.success('Login successfully!') })
     }
     return (
         <div className='p-6'>
