@@ -1,9 +1,13 @@
 import React from 'react'
 import { IoLocationOutline } from "react-icons/io5";
+import { MdBedroomParent, MdBathroom } from "react-icons/md";
+import { GiHomeGarage } from "react-icons/gi";
+import { FaBed } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 const Card = ({property}) => {
     const { image,
         estate_title,
-        segment,
+        id,
         description,
         price,
         status,
@@ -23,13 +27,13 @@ const Card = ({property}) => {
                 <p>{description}</p>
                 <p className='flex gap-2 text-base items-center'><IoLocationOutline className='text-red-500' />{location}</p>
                 <div className='divider'></div>
-                <div className='flex justify-around items-center'>
-                    <div>bed</div>
-                    <div>bath</div>
-                    <div>garage</div>
-                </div>
+                {/* <div className='flex justify-around items-center'>
+                    <div className=' flex flex-col items-center justify-center'><FaBed className='text-3xl text-blue-600'/>{ `Bedroom ${bedroom}`}</div>
+                    <div className=' flex flex-col items-center justify-center'><MdBathroom className='text-3xl text-blue-600' />{ `Bathroom ${bathroom}`}</div>
+                    <div className=' flex flex-col items-center justify-center'><GiHomeGarage className='text-3xl text-blue-600' />{ `Garages ${garage}`}</div>
+                </div> */}
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <Link to={`/details/${id}`}><button className="btn btn-primary">View Detail</button></Link>
                 </div>
             </div>
         </div>

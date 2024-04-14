@@ -6,6 +6,7 @@ import HomePage from '../Pages/HomePage'
 import RegisterPage from '../Pages/RegisterPage'
 import LoginPage from '../Pages/LoginPage'
 import UpdateProfilePage from '../Pages/UpdateProfilePage'
+import DetailsPage from '../Pages/DetailsPage'
 const routes = createBrowserRouter([
     {
         path: '/',
@@ -30,8 +31,12 @@ const routes = createBrowserRouter([
                 element:<UpdateProfilePage/>
             }
         ]
-    
-    }])
+    },
+    {
+        path: '/details/:id',
+        element:<DetailsPage/>
+    }
+])
 
 
 export default routes
