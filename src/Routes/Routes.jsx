@@ -33,7 +33,8 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/details/:id',
-                element: <PrivetRoute><DetailsPage /></PrivetRoute>
+                element: <PrivetRoute><DetailsPage /></PrivetRoute>,
+                loader:()=>fetch('/data.json')
             }
         ]
     },
