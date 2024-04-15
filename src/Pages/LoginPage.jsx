@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth'
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
+import { Helmet } from 'react-helmet-async'
 
 const LoginPage = () => {
     const googleProvider = new GoogleAuthProvider()
@@ -58,6 +59,10 @@ const LoginPage = () => {
     }
     return (
         <div className='p-6'>
+            <Helmet>
+                <title>Login | Property Pulse</title>
+            </Helmet>
+
             <div>
                 <h1 className='font-bold text-2xl text-center p-4'>Login Now</h1>
             </div>

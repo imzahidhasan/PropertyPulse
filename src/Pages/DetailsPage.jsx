@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import { GoLocation } from 'react-icons/go'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { useLoaderData, useLocation, useParams } from 'react-router-dom'
@@ -8,6 +9,10 @@ const DetailsPage = () => {
   const apartment = data.find((home) => home.id === param.id)
   return (
     <div>
+      <Helmet>
+        <title>Property details | Property Pulse</title>
+      </Helmet>
+
       <div className="card container mx-auto bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
           <img src={apartment.image} className="rounded-xl" />

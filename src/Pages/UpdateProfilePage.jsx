@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form';
 import { FirebaseContext } from '../Firebase/FirebaseProvider';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const UpdateProfilePage = () => {
   const { updateUser }=useContext(FirebaseContext)
@@ -22,6 +23,10 @@ const UpdateProfilePage = () => {
    }
   return (
     <>
+      <Helmet>
+        <title>Update profile | Property Pulse</title>
+      </Helmet>
+
       <div className='p-5 mx-auto'>
         <div>
           <h1 className='font-bold text-2xl text-center p-4'>Update Profile</h1>

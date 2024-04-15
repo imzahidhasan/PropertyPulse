@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import { BsEye } from 'react-icons/bs'
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
+import { Helmet } from 'react-helmet-async'
 
 const RegisterPage = () => {
     const [toggle, setToggle] = useState(true)
@@ -36,6 +37,10 @@ const RegisterPage = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Register | Property Pulse</title>
+            </Helmet>
+
             <div className='mx-auto p-5'>
                 <div>
                     <h1 className='font-bold text-2xl text-center p-4'>Register Now</h1>

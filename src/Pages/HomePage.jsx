@@ -2,11 +2,15 @@ import React from 'react'
 import Slider from '../components/Slider'
 import { useLoaderData } from 'react-router-dom'
 import Card from '../components/Card'
+import { Helmet } from 'react-helmet-async'
 
 const HomePage = () => {
   const data = useLoaderData()
   return (
     <>
+      <Helmet>
+      <title>Home | Property Pulse</title>
+    </Helmet>
       <Slider />
       <div>
         <h1 className='text-2xl font-bold mt-4 text-center '>Available Properties</h1>
