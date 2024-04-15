@@ -5,38 +5,53 @@ export const FirebaseContext = createContext(null)
 
 const FirebaseProvider = ({ children }) => {
     const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState(null)
+    console.log(loading);
     const createUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
     const logInUser = (email, password) => {
+        setLoading(true)
+
         return signInWithEmailAndPassword(auth, email, password)
     }
     const logOutUser = () => {
         return signOut(auth)
     }
     const googleLogin = (provider) => {
+        setLoading(true)
+
         return signInWithPopup(auth, provider)
     }
     const githubLogin = (provider) => {
+        setLoading(true)
+
         return signInWithPopup(auth, provider)
     }
     const updateUser = (name, url) => {
+        setLoading(true)
+
         return updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: url
         })
     }
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        setLoading(true)
+        const unSubscribe=onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user)
+                setLoading(false)
+
             }
         })
+        return ()=>unSubscribe()
     }, [])
 
 
     const allValues = {
-        createUser, logInUser, logOutUser, user, setUser, googleLogin, githubLogin, updateUser
+        createUser, logInUser, logOutUser, user, setUser, googleLogin, githubLogin, updateUser,loading
     }
 
     return (

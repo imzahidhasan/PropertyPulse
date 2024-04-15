@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FirebaseContext } from '../Firebase/FirebaseProvider'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
@@ -9,7 +9,8 @@ const LoginPage = () => {
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
 
-
+    const location = useLocation()
+    const navigate = useNavigate()
     const { logInUser, googleLogin, githubLogin } = useContext(FirebaseContext)
     const {
         register,
@@ -23,6 +24,7 @@ const LoginPage = () => {
                 (user) => {
                     if (user) {
                         reset()
+                        navigate(location?.state || '/')
                     }
                 }
             )
@@ -41,11 +43,17 @@ const LoginPage = () => {
 
     const handleGoogle = () => {
         googleLogin(googleProvider)
-            .then((result) => { toast.success('Login successfully!') })
+            .then((result) => {
+                toast.success('Login successfully!')
+                navigate(location?.state||'/')
+            })
     }
     const handleGithub = () => {
         githubLogin(githubProvider)
-            .then((result) => { toast.success('Login successfully!') })
+            .then((result) => {
+                toast.success('Login successfully!')
+                navigate(location?.state || '/')
+            })
     }
     return (
         <div className='p-6'>

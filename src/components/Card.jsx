@@ -27,11 +27,6 @@ const Card = ({property}) => {
                 <p>{description}</p>
                 <p className='flex gap-2 text-base items-center'><IoLocationOutline className='text-red-500' />{location}</p>
                 <div className='divider'></div>
-                {/* <div className='flex justify-around items-center'>
-                    <div className=' flex flex-col items-center justify-center'><FaBed className='text-3xl text-blue-600'/>{ `Bedroom ${bedroom}`}</div>
-                    <div className=' flex flex-col items-center justify-center'><MdBathroom className='text-3xl text-blue-600' />{ `Bathroom ${bathroom}`}</div>
-                    <div className=' flex flex-col items-center justify-center'><GiHomeGarage className='text-3xl text-blue-600' />{ `Garages ${garage}`}</div>
-                </div> */}
                 <div className="card-actions justify-end">
                     <Link to={`/details/${id}`}><button className="btn btn-primary">View Detail</button></Link>
                 </div>

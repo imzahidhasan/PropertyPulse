@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FirebaseContext } from '../Firebase/FirebaseProvider'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 
 const RegisterPage = () => {
+    const navigate=useNavigate()
     const { createUser } = useContext(FirebaseContext)
     const {
         register,
@@ -18,6 +19,7 @@ const RegisterPage = () => {
                 (user) => {
                     if (user) {
                         reset()
+                        navigate('/')
                     }
                 }
         )
