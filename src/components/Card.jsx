@@ -1,8 +1,5 @@
 import React from 'react'
 import { IoLocationOutline } from "react-icons/io5";
-import { MdBedroomParent, MdBathroom } from "react-icons/md";
-import { GiHomeGarage } from "react-icons/gi";
-import { FaBed } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 const Card = ({property}) => {
     const { image,
@@ -24,7 +21,7 @@ const Card = ({property}) => {
             <div className='bg-green-600 p-1 m-4 max-w-28 text-white rounded-md'>{ price}</div>
             <div className="card-body">
                 <h2 className="card-title">{estate_title}</h2>
-                <p>{description}</p>
+                <p>{description.slice(0,120)}</p>
                 <p className='flex gap-2 text-base items-center'><IoLocationOutline className='text-red-500' />{location}</p>
                 <div className='divider'></div>
                 <div className="card-actions justify-end">
