@@ -1,14 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FirebaseContext } from '../Firebase/FirebaseProvider'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth'
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
 
 const LoginPage = () => {
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
-
+    const [toggle, setToggle] = useState(true)
     const location = useLocation()
     const navigate = useNavigate()
     const { logInUser, googleLogin, githubLogin } = useContext(FirebaseContext)
@@ -72,9 +73,15 @@ const LoginPage = () => {
                     <div className="label">
                         <span className="label-text">Enter your password?</span>
                     </div>
-                    <input {...register("password", {
-                        required: true
-                    })} type="text" placeholder="Password" className="input input-bordered w-full max-w-xs" />
+                    <div className='relative'>
+                        <input {...register("password", {
+                            required: true
+                        })} type={toggle ? "password" : 'text'} placeholder="Password" className="input input-bordered w-full max-w-xs" />
+                        <span onClick={() => setToggle(!toggle)} className='flex items-center absolute top-4 text-2xl right-2'>
+                            {toggle ? <AiFillEyeInvisible />
+                                : <AiFillEye />}
+                        </span>
+                   </div>
                     {errors.password && <span className='text-red-500'>This field is required</span>}
                 </label>
                 <div className='text-center mt-5'>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { GoLocation } from 'react-icons/go'
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { useLoaderData, useLocation, useParams } from 'react-router-dom'
-
 const DetailsPage = () => {
   const param = useParams()
   const data = useLoaderData()
@@ -51,8 +51,28 @@ const DetailsPage = () => {
               <p className='text-lg max-w-[65%] mx-auto font-bold'>Facilities</p>
             </div>
             {
-              apartment.facilities.map((data,idx) => <ul className='list-disc font-medium mx-auto max-w-[60%]' key={idx}><li>{data}</li></ul>)
+              apartment.facilities.map((data, idx) => <ul className='list-disc font-medium mx-auto max-w-[60%]' key={idx}><li>{data}</li></ul>)
             }
+          </div>
+
+
+
+
+          <div className='h-96 w-full'>
+            <div>
+              <p className=' text-xl font-bold'>Location:</p>
+            </div>
+            <MapContainer className='h-full w-full' center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+              <TileLayer
+                attribution='&copy; <href="https://www.openstreetmap.org/copyright">OpenStreetMap</href=> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <Marker position={[51.505, -0.09]}>
+                <Popup>
+                  { apartment.location}
+                </Popup>
+              </Marker>
+            </MapContainer>
           </div>
         </div>
       </div>

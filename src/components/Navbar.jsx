@@ -22,7 +22,7 @@ const Navbar = () => {
         setUser(null)
     }
     return (
-        <div className="navbar bg-base-100 container mx-auto" >
+        <div className="navbar bg-base-100 container relative z-30 mx-auto" >
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -41,8 +41,8 @@ const Navbar = () => {
             </div>
             <div className="navbar-end gap-2">
                 {user ? <div className="avatar">
-                    <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                        <a data-tooltip-id="tooltip" data-tooltip-content={ user?.displayName}><img src={user?.photoURL} /></a>
+                    <div className="w-8 relative z-30 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <a className='' data-tooltip-id="tooltip" data-tooltip-content={ user?.displayName}><img src={user?.photoURL} /></a>
                     </div>
                 </div> : ''}
 

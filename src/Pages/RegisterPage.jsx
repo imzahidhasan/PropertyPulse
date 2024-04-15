@@ -3,9 +3,12 @@ import { Link, useNavigate } from 'react-router-dom'
 import { FirebaseContext } from '../Firebase/FirebaseProvider'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast'
+import { BsEye } from 'react-icons/bs'
+import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
 
 const RegisterPage = () => {
-    const navigate=useNavigate()
+    const [toggle, setToggle] = useState(true)
+    const navigate = useNavigate()
     const { createUser } = useContext(FirebaseContext)
     const {
         register,
@@ -14,7 +17,7 @@ const RegisterPage = () => {
         formState: { errors },
     } = useForm()
     const onSubmit = ({ name, email, url, password }) => {
-       const myPromise= createUser(email, password)
+        const myPromise = createUser(email, password)
             .then(
                 (user) => {
                     if (user) {
@@ -22,7 +25,7 @@ const RegisterPage = () => {
                         navigate('/')
                     }
                 }
-        )
+            )
         toast.promise(myPromise, {
             loading: 'Creating your account',
             success: 'successfully created your account',
@@ -31,7 +34,6 @@ const RegisterPage = () => {
     }
 
 
-    
     return (
         <>
             <div className='mx-auto p-5'>
@@ -56,7 +58,7 @@ const RegisterPage = () => {
                         {errors.email && <span className='text-red-500'>This field is required</span>}
 
                     </label>
-                    
+
                     <label className="form-control mx-auto w-full max-w-xs">
                         <div className="label">
                             <span className="label-text">Your Photo URL?</span>
@@ -64,17 +66,23 @@ const RegisterPage = () => {
                         <input {...register("url", { required: true })} type="text" placeholder="URL " className="input input-bordered w-full max-w-xs" />
                         {errors.url && <span className='text-red-500'>This field is required</span>}
                     </label>
-                    
+
                     <label className="form-control mx-auto w-full max-w-xs">
                         <div className="label">
                             <span className="label-text">Enter your password?</span>
                         </div>
-                        <input {...register("password", {
-                            pattern: {
-                                value: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
-                                message: "Password must contain at least one uppercase letter, one lowercase letter, and at least 6 characters long."
-                            }
-                        })} type="text" placeholder="Password" className="input input-bordered w-full max-w-xs" />
+                        <div className='relative'>
+                            <input {...register("password", {
+                                pattern: {
+                                    value: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
+                                    message: "Password must contain at least one uppercase letter, one lowercase letter, and at least 6 characters long."
+                                }
+                            })} type={toggle?"password":'text'} placeholder="Password" className="input input-bordered w-full max-w-xs" />
+                            <span onClick={()=>setToggle(!toggle)} className='flex items-center absolute top-4 text-2xl right-2'>
+                                {toggle ?<AiFillEyeInvisible/>
+                                    : <AiFillEye />}
+                            </span>
+                        </div>
                         {errors.password && <span className='text-red-500'>{errors.password.message}</span>}
 
                     </label>
