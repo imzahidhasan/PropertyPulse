@@ -6,25 +6,15 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCKieepvcXVrtBBcFgUWnrP4r_4r1ani2w",
-  authDomain: "fir-email-auth-18750.firebaseapp.com",
-  projectId: "fir-email-auth-18750",
-  storageBucket: "fir-email-auth-18750.appspot.com",
-  messagingSenderId: "428321689617",
-  appId: "1:428321689617:web:ef65fbb515961f0674e1b0",
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
-
-// console.log(import.meta.env.VITE_APIKEY);
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app)
 export default auth
-
-
-//  apiKey:import.meta.env.VITE_APIKEY,
-//   authDomain:import.meta.env.VITE_AUTHDOMAIN,
-//   projectId:import.meta.env.VITE_PROJECTID,
-//   storageBucket:import.meta.env.VITE_STORAGEBUCKET,
-//   messagingSenderId:import.meta.env.VITE_MESSAGINGSENDERID,
-//   appId:import.meta.env.VITE_APPID

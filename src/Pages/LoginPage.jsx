@@ -12,7 +12,6 @@ const LoginPage = () => {
     const githubProvider = new GithubAuthProvider()
     const [toggle, setToggle] = useState(true)
     const location = useLocation()
-    console.log(location);
     const navigate = useNavigate()
     const { logInUser, googleLogin, githubLogin } = useContext(FirebaseContext)
     const {
@@ -68,14 +67,14 @@ const LoginPage = () => {
                 <h1 className='font-bold text-2xl text-center p-4'>Login Now</h1>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <label className="form-control mx-auto w-full max-w-xs">
+                <label data-aos="fade-down" data-aos-delay="50" className="form-control mx-auto w-full max-w-xs">
                     <div className="label">
                         <span className="label-text">Enter your email?</span>
                     </div>
                     <input  {...register("email", { required: true })} type="email" placeholder="Email" className="input input-bordered w-full max-w-xs" />
                     {errors.email && <span className='text-red-500'>This field is required</span>}
                 </label>
-                <label className="form-control mx-auto w-full max-w-xs">
+                <label data-aos="fade-down" data-aos-delay="500" className="form-control mx-auto w-full max-w-xs">
                     <div className="label">
                         <span className="label-text">Enter your password?</span>
                     </div>
@@ -90,7 +89,7 @@ const LoginPage = () => {
                     </div>
                     {errors.password && <span className='text-red-500'>This field is required</span>}
                 </label>
-                <div className='text-center mt-5'>
+                <div  className='text-center mt-5'>
                     <button className='btn  w-full max-w-xs text-center btn-primary'> Login</button>
                 </div>
                 <div className='flex text-center items-center justify-center p-4 gap-2'>
@@ -100,7 +99,7 @@ const LoginPage = () => {
             </form>
 
             <div class="divider max-w-xs mx-auto">Login with social accounts</div>
-            <div className='max-w-xs mx-auto space-y-2'>
+            <div  className='max-w-xs mx-auto space-y-2'>
                 <button onClick={() => handleGoogle()} aria-label="Login with Google" type="button" className="flex items-center justify-center w-full p-2 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 fill-current">
                         <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
