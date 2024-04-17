@@ -10,7 +10,8 @@ import { Helmet } from 'react-helmet-async'
 const RegisterPage = () => {
     const [toggle, setToggle] = useState(true)
     const navigate = useNavigate()
-    const { createUser } = useContext(FirebaseContext)
+    const { createUser, updateUser, user } = useContext(FirebaseContext)
+    console.log(user);
     const {
         register,
         handleSubmit,
@@ -23,7 +24,9 @@ const RegisterPage = () => {
                 (user) => {
                     if (user) {
                         reset()
-                        navigate('/')
+                        updateUser(name, url).then(
+                            navigate('/')
+                        )
                     }
                 }
             )
@@ -82,9 +85,9 @@ const RegisterPage = () => {
                                     value: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
                                     message: "Password must contain at least one uppercase letter, one lowercase letter, and at least 6 characters long."
                                 }
-                            })} type={toggle?"password":'text'} placeholder="Password" className="input input-bordered w-full max-w-xs" />
-                            <span onClick={()=>setToggle(!toggle)} className='flex items-center absolute top-4 text-2xl right-2'>
-                                {toggle ?<AiFillEyeInvisible/>
+                            })} type={toggle ? "password" : 'text'} placeholder="Password" className="input input-bordered w-full max-w-xs" />
+                            <span onClick={() => setToggle(!toggle)} className='flex items-center absolute top-4 text-2xl right-2'>
+                                {toggle ? <AiFillEyeInvisible />
                                     : <AiFillEye />}
                             </span>
                         </div>

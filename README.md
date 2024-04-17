@@ -1,8 +1,19 @@
-# React + Vite
+#Project Name: Property Pulse
+ live link: 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+ ##Used npm package
+    -React hook Form
+    -React leaflet
+    -Swiper slider
+    -AOS 'Animation on scroll'
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##Feature
+    -user can register there profile
+    -user can login with there social like google or github
+    -user can edit there profile information
+    -user can only access privet route like blogs,update profile etc
+    -user can navigate to different route using navbar
+    -responsive for all device
+    
+

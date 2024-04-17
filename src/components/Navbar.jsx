@@ -12,9 +12,14 @@ const Navbar = () => {
         <li><NavLink to={'/register'} className={({ isActive, isPending }) =>
             isPending ? "text-green-700" : isActive ? "text-red-700" : ""
         }>Register</NavLink></li>
-        <li><NavLink to={'/update-profile'} className={({ isActive, isPending }) =>
+        {user ? <li><NavLink to={'/update-profile'} className={({ isActive, isPending }) =>
             isPending ? "text-green-700" : isActive ? "text-red-700" : ""
-        }>Update Profile</NavLink></li>
+        }>Update Profile</NavLink></li> : ""}
+        {
+            user ? <li><NavLink to={'/blogs'} className={({ isActive, isPending }) =>
+                isPending ? "text-green-700" : isActive ? "text-red-700" : ""
+            }>Blogs</NavLink></li>:''
+        }
     </>
 
     const handleLogout = () => {

@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { IoLocationOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
-const Card = ({property}) => {
+import { FirebaseContext } from '../Firebase/FirebaseProvider';
+const Card = ({ property }) => {
+    const { user } = useContext(FirebaseContext)
     const { image,
         estate_title,
         id,
@@ -25,7 +27,7 @@ const Card = ({property}) => {
                 <p className='flex gap-2 text-base items-center'><IoLocationOutline className='text-red-500' />{location}</p>
                 <div className='divider'></div>
                 <div className="card-actions justify-end">
-                    <Link to={`/details/${id}`}><button className="btn btn-primary">View Detail</button></Link>
+                    <Link to={user ? `details/${id}`:'/login'}><button className="btn btn-primary">View Detail</button></Link>
                 </div>
             </div>
         </div>

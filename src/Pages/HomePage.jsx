@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet-async'
 const HomePage = () => {
   const data = useLoaderData()
   return (
-    <>
+    <div className='container mx-auto'>
       <Helmet>
       <title>Home | Property Pulse</title>
     </Helmet>
@@ -17,14 +17,14 @@ const HomePage = () => {
         <p className='text-lg text-center p-2'>From quaint cottages to modern villas, our selection of residential properties offers something  for individuals and families alike. <br /> Experience comfort, style, and convenience in your new home.</p>
       </div>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 mt-5 p-5 md:grid-cols-3'>
+      <div data-aos="fade-up" className='grid grid-cols-1 sm:grid-cols-2 gap-6 mt-5 p-5 md:grid-cols-3'>
 
         {
           data.map((property) => <Card key={property.id} property={ property} />)
         }
         
       </div>
-    </>
+    </div>
 
   )
 }

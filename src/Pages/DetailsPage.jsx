@@ -4,6 +4,8 @@ import { GoLocation } from 'react-icons/go'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import { useLoaderData, useLocation, useParams } from 'react-router-dom'
 const DetailsPage = () => {
+  const location=useLocation()
+  console.log(location);
   const param = useParams()
   const data = useLoaderData()
   const apartment = data.find((home) => home.id === param.id)
@@ -60,9 +62,6 @@ const DetailsPage = () => {
             }
           </div>
 
-
-
-
           <div className='h-96 w-full'>
             <div>
               <p className=' text-xl font-bold'>Location:</p>
@@ -74,7 +73,7 @@ const DetailsPage = () => {
               />
               <Marker position={[51.505, -0.09]}>
                 <Popup>
-                  { apartment.location}
+                  {apartment.location}
                 </Popup>
               </Marker>
             </MapContainer>
