@@ -11,23 +11,27 @@ const Card = ({ property }) => {
         price,
         status,
         area,
+        segment,
         location,
-        facilities
     }=property
     return (
-        <div className="card card-compact bg-base-100 shadow-xl">
+        <div data-aos="fade-up"
+            className="card card-compact bg-base-100 shadow-xl">
             <figure className='max-h-72 relative'>
-                <div className='badge badge-secondary absolute top-2 badge-lg right-2'>{ `For ${status}`}</div>
+                <div className='badge badge-accent absolute top-2 badge-lg right-2'>{ `For ${status}`}</div>
                 <img  src={ image} />
             </figure>
-            <div className='bg-green-600 p-1 m-4 max-w-28 text-white rounded-md'>{ price}</div>
+            <div className='bg-blue-300 p-2 m-4  text-blue-700 rounded-md'>
+                <p>{segment }</p>
+            </div>
+            <div className='bg-blue-300 p-1 m-4 max-w-32 text-blue-700 rounded-md'>{ price}</div>
             <div className="card-body">
                 <h2 className="card-title">{estate_title}</h2>
                 <p>{description.slice(0,120)}</p>
                 <p className='flex gap-2 text-base items-center'><IoLocationOutline className='text-red-500' />{location}</p>
                 <div className='divider'></div>
                 <div className="card-actions justify-end">
-                    <Link to={user ? `details/${id}`:'/login'}><button className="btn btn-primary">View Detail</button></Link>
+                    <Link to={ `details/${id}`}><button className="btn bg-blue-300 text-blue-700">View Detail</button></Link>
                 </div>
             </div>
         </div>

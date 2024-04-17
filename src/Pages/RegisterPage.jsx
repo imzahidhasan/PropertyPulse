@@ -10,7 +10,7 @@ import { Helmet } from 'react-helmet-async'
 const RegisterPage = () => {
     const [toggle, setToggle] = useState(true)
     const navigate = useNavigate()
-    const { createUser, updateUser, user } = useContext(FirebaseContext)
+    const { createUser, updateUser, user, logOutUser } = useContext(FirebaseContext)
     console.log(user);
     const {
         register,
@@ -50,7 +50,7 @@ const RegisterPage = () => {
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
 
-                    <label className="form-control w-full mx-auto max-w-xs">
+                    <label data-aos="fade-down" data-aos-delay="50" className="form-control w-full mx-auto max-w-xs">
                         <div className="label">
                             <span className="label-text">Enter your name?</span>
                         </div>
@@ -58,7 +58,7 @@ const RegisterPage = () => {
                         {errors.name && <span className='text-red-500'>This field is required</span>}
                     </label>
 
-                    <label className="form-control mx-auto w-full max-w-xs">
+                    <label data-aos="fade-down"  data-aos-delay="500" className="form-control mx-auto w-full max-w-xs">
                         <div className="label">
                             <span className="label-text">Enter your email?</span>
                         </div>
@@ -67,7 +67,7 @@ const RegisterPage = () => {
 
                     </label>
 
-                    <label className="form-control mx-auto w-full max-w-xs">
+                    <label data-aos="fade-down" data-aos-delay="1000" className="form-control mx-auto w-full max-w-xs">
                         <div className="label">
                             <span className="label-text">Your Photo URL?</span>
                         </div>
@@ -75,7 +75,7 @@ const RegisterPage = () => {
                         {errors.url && <span className='text-red-500'>This field is required</span>}
                     </label>
 
-                    <label className="form-control mx-auto w-full max-w-xs">
+                    <label data-aos="fade-down" data-aos-delay="1500" className="form-control mx-auto w-full max-w-xs">
                         <div className="label">
                             <span className="label-text">Enter your password?</span>
                         </div>
@@ -94,7 +94,7 @@ const RegisterPage = () => {
                         {errors.password && <span className='text-red-500'>{errors.password.message}</span>}
 
                     </label>
-                    <div className='text-center mt-5'>
+                    <div  className='text-center mt-5'>
                         <button className='btn  w-full max-w-xs text-center btn-primary'> Submit</button>
                     </div>
                     <div className='flex justify-start gap-4 max-w-xs mx-auto p-5'>

@@ -7,17 +7,17 @@ const Navbar = () => {
     const { user, logOutUser, setUser } = useContext(FirebaseContext)
     const links = <>
         <li><NavLink to={'/'} className={({ isActive, isPending }) =>
-            isPending ? "text-green-700" : isActive ? "text-red-700" : ""
+            isPending ? "text-green-700" : isActive ? "text-blue-800 bg-blue-300" : ""
         }>Home</NavLink></li>
         <li><NavLink to={'/register'} className={({ isActive, isPending }) =>
-            isPending ? "text-green-700" : isActive ? "text-red-700" : ""
+            isPending ? "text-green-700" : isActive ? "text-blue-800 bg-blue-300" : ""
         }>Register</NavLink></li>
         {user ? <li><NavLink to={'/update-profile'} className={({ isActive, isPending }) =>
-            isPending ? "text-green-700" : isActive ? "text-red-700" : ""
+            isPending ? "text-green-700" : isActive ? "text-blue-800 bg-blue-300" : ""
         }>Update Profile</NavLink></li> : ""}
         {
             user ? <li><NavLink to={'/blogs'} className={({ isActive, isPending }) =>
-                isPending ? "text-green-700" : isActive ? "text-red-700" : ""
+                isPending ? "text-green-700" : isActive ? "text-blue-800 bg-blue-300" : ""
             }>Blogs</NavLink></li>:''
         }
     </>
@@ -27,7 +27,7 @@ const Navbar = () => {
         setUser(null)
     }
     return (
-        <div className="navbar bg-base-100 container relative z-30 mx-auto" >
+        <div data-aos="fade-down" data-aos-duration="700" className="navbar font-medium text-lg bg-base-100 container relative z-30 mx-auto" >
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -50,8 +50,7 @@ const Navbar = () => {
                         <a className='' data-tooltip-id="tooltip" data-tooltip-content={ user?.displayName}><img src={user?.photoURL} /></a>
                     </div>
                 </div> : ''}
-
-                {user ? <button onClick={handleLogout} className="btn">Logout</button> : <Link to={'/login'} className="btn">Login</Link>}
+                {user ? <button onClick={handleLogout} className="btn bg-blue-300">Logout</button> : <Link to={'/login'} className="btn bg-blue-300 text-blue-700">Login</Link>}
                 <Tooltip id='tooltip'/>
             </div>
         </div>

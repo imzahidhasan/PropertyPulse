@@ -6,7 +6,7 @@ const PrivetRoute = ({ children }) => {
     const { user, loading } = useContext(FirebaseContext)
     
     const location = useLocation()
-    console.log(location);
+    console.log('location', location);
 
     if (loading) {
         return (
