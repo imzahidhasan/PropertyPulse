@@ -1,5 +1,5 @@
 # Project Name: Property Pulse
- live link: [text](https://fir-email-auth-18750.web.app/)
+ live link: https://fir-email-auth-18750.web.app/
 
 
  ## Used npm package
