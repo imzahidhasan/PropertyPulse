@@ -45,7 +45,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: 'blogs/:id',
-                element: <BlogDetails />,
+                element: <PrivetRoute><BlogDetails /></PrivetRoute>,
                 loader:()=>fetch("/blog.json")
             }
             
