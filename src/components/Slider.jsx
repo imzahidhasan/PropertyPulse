@@ -6,9 +6,6 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import { Autoplay, EffectFade,Navigation, Pagination } from 'swiper/modules';
 const Slider = () => {
-    const lol = (lol) => {
-        console.log(lol);
-    }
     return (
         <div>
             <Swiper
