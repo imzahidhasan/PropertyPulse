@@ -4,10 +4,7 @@ import { Navigate, useLocation } from 'react-router-dom'
 
 const PrivetRoute = ({ children }) => {
     const { user, loading } = useContext(FirebaseContext)
-    
     const location = useLocation()
-    console.log('location', location);
-
     if (loading) {
         return (
             <div className=' flex justify-center items-center min-h-screen'>
@@ -15,7 +12,6 @@ const PrivetRoute = ({ children }) => {
             </div>
         )
     }
-    
     if (!user) {
         return <Navigate to={'/login'} state={location.pathname} ></Navigate>
     }
